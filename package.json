@@ -2,14 +2,24 @@
   "name": "rock-garden",
   "version": "0.0.0",
   "description": "A Redux inspired state container for use in a render loop.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d lib",
+    "watch": "babel --watch src -d lib"
   },
   "keywords": [
     "redux",
     "react"
   ],
   "author": "Patrick King <pfk.npm@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:PatrickKing/rock-garden.git"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-env": "^1.1.4"
+  }
 }
