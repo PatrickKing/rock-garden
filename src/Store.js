@@ -13,7 +13,8 @@ let Store = function (storeComponents) {
   let updaters = {};
 
   let initialTrees = {};
-  for (let storeComponent of storeComponents) {
+  for (let i = 0; i < storeComponents.length; i++) {
+    let storeComponent = storeComponents[i];
 
     if (!storeComponent.key || !storeComponent.updater) {
       // TODO improve this
@@ -37,8 +38,8 @@ let Store = function (storeComponents) {
       throw new Error(`Cannot dispatch while dispatching.`);
     }
     dispatching = true;
-    for (let storeKey of store.updaters) {
-      updaters[storeKey]( trees[storeKey], action );
+    for (let key in updaters) {
+      updaters[key]( trees[key], action );
     }
     dispatching = false;
   };
